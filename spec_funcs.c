@@ -14,7 +14,9 @@ int spec_checker(va_list ap, char s)
 	int i = 0;
 	spec_t specs[] = {
 		{ "c", print_char },
-		{ "s", print_str }
+		{ "s", print_str },
+		{ "d", print_int },
+		{ "i", print_int }
 	};
 
 	while (i < 2)
@@ -51,7 +53,7 @@ int print_char(va_list ap)
  *
  * @ap: arg, var, the thing to print, a str
  *
- * Return: int (c -- stands for chars or conut -- number of chars printed)
+ * Return: int (c -- stands for chars or count -- number of chars printed)
  */
 int print_str(va_list ap)
 {
@@ -68,6 +70,54 @@ int print_str(va_list ap)
 		putchar(str[c]);
 		c++;
 	}
+
+	return (c);
+}
+
+/**
+ * print_int - prints int to stdout
+ *
+ * @ap: arg, var, the thing to print, an int
+ *
+ * Return: int (c -- stands for chars or count -- number of chars printed)
+ */
+int print_int(va_list ap)
+{
+	int i, ii, a = 0, n, not_n, x, c = 0;
+
+	n = va_arg(ap, int);
+
+	if (n < 0)
+	{
+		putchar('-');
+		n = n * -1;
+		a = 1;
+	}
+
+	not_n = n;
+
+	while (not_n > 0)
+	{
+		c++;
+		not_n = (not_n / 10);
+	}
+
+	if (c == 0)
+		return (0);
+
+	for (i = c - 1; i >= 0; i--)
+	{
+		x = 1;
+
+		for (ii = 0; ii < i; ii++)
+			x = x * 10;
+
+		putchar((n / x) + '0');
+		n = (n % x);
+	}
+
+	if (a == 1)
+		c = c + 1;
 
 	return (c);
 }

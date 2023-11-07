@@ -24,6 +24,8 @@ int spec_checker(va_list ap, char s)
 		i++;
 	}
 
+	if (s == '\0')
+		return (0);
 	putchar('%');
 	if (s == '%')
 		return (1);

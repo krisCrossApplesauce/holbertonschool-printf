@@ -4,7 +4,19 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+/**
+ * struct spec - struct for funcs to deal with different vars
+ *
+ * @char *spec: char (specifier)
+ *
+ * @int *f: func (to deal the type of var indicated by the specifier)
+ */
+typedef struct spec {
+    char *spec;
+    int (*f)(va_list);
+} spec_t;
+
 int _printf(const char *format, ...);
-int perc_checker(const char c, ...);
+int perc_checker(va_list ap, const char c);
 
 #endif

@@ -8,8 +8,7 @@
  * Return: int (c -- stands for chars or count -- number of chars printed to stdout)
  */
 
-int _printf(const char *format, ...)
-{
+int _printf(const char *format, ...) {
     va_list ap;
     int i = 0;
     int c = 0;

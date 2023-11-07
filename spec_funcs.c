@@ -6,6 +6,6 @@
  *
  *
  */
-int perc_checker(const char c, ...) {
+int spec_checker(const char c, ...) {
     
 }

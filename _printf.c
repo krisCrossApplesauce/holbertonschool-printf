@@ -1,32 +1,29 @@
 #include "main.h"
 
 /**
- * _printf - does something
+ * _printf - prints string to stdout
  *
  * @const char *format: char pointer (str)
  *
- * @...: args
- *
- * Return: int (and it also prints to stdout)
+ * Return: int (c -- stands for chars or count -- number of chars printed to stdout)
  */
 
 int _printf(const char *format, ...)
 {
     va_list ap;
-    char *arr;
     int i = 0;
+    int c = 0;
 
-    va_start(ap, n);
-
-    arr = va_arg(ap, char *);
+    va_start(ap, format);
 
     while (format[i] != NULL) {
         if (format[i] == '%') {
-            perc_checker(format[i + 1], ...);
+            spec_checker(ap, format[i + 1]);
             i += 1;
         }
         else {
             putchar(format[i]);
+			c += 1;
         }
         i += 1;
     }

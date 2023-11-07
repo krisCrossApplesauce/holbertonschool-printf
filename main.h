@@ -14,9 +14,10 @@
  *
  * @f: func (to deal the type of var indicated by the specifier)
  */
-typedef struct spec {
-    char *spec;
-    int (*f)(va_list);
+typedef struct spec
+{
+	char *spec;
+	int (*f)(va_list);
 } spec_t;
 
 int _printf(const char *format, ...);

@@ -3,7 +3,7 @@
 /**
  * _printf - prints string to stdout
  *
- * @const char *format: char pointer (str)
+ * @format: char pointer (str)
  *
  * Return: int (c -- stands for chars or count -- number of chars printed to stdout)
  */

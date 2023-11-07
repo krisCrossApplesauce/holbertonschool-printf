@@ -3,9 +3,9 @@
 /**
  * spec_checker - runs correct func based on specifier
  *
- * @va_list ap: list of vars
+ * @ap: list of vars
  *
- * @const char s: char (s stands for spec)
+ * @s: char (s stands for spec)
  *
  * Return: int (length of var str/char or whatever)
  */
@@ -36,7 +36,7 @@ int spec_checker(va_list ap, const char s) {
 /**
  * print_char - prints char to stdout
  *
- * @va_list ap: arg, var, the thing to print, a char
+ * @ap: arg, var, the thing to print, a char
  *
  * Return: int (number of chars printed, 1)
  */
@@ -48,7 +48,7 @@ int print_char(va_list ap) {
 /**
  * print_str - prints str to stdout
  *
- * @va_list ap: arg, var, the thing to print, a str
+ * @ap: arg, var, the thing to print, a str
  *
  * Return: int (c -- stands for chars or conut -- number of chars printed)
  */

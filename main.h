@@ -10,9 +10,9 @@
 /**
  * struct spec - struct for funcs to deal with different vars
  *
- * @char *spec: char (specifier)
+ * @spec: char (specifier)
  *
- * @int *f: func (to deal the type of var indicated by the specifier)
+ * @f: func (to deal the type of var indicated by the specifier)
  */
 typedef struct spec {
     char *spec;

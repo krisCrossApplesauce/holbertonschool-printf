@@ -16,19 +16,22 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 
+	if (format == NULL)
+		return (0);
+
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
 			c = c + spec_checker(ap, format[i + 1]);
-			i += 1;
+			i++;
 		}
 		else
 		{
 			putchar(format[i]);
-			c += 1;
+			c++;
 		}
-		i += 1;
+		i++;
 	}
 
 	va_end(ap);

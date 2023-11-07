@@ -9,12 +9,12 @@
  *
  * Return: int (length of var str/char or whatever)
  */
-int spec_checker(va_list ap, const char s)
+int spec_checker(va_list ap, char s)
 {
 	int i = 0;
 	spec_t specs[] = {
-		{"c", print_char},
-		{"s", print_str}
+		{ "c", print_char },
+		{ "s", print_str }
 	};
 
 	while (i < 2)
@@ -54,7 +54,12 @@ int print_char(va_list ap)
 int print_str(va_list ap)
 {
 	int c = 0;
-	char *str = va_arg(ap, char *);
+	char *str;
+
+	str = va_arg(ap, char *);
+
+	if (str == NULL)
+		return (0);
 
 	while (str[c])
 	{

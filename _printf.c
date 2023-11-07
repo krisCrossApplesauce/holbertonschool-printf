@@ -16,11 +16,11 @@ int _printf(const char *format, ...)
 
 	va_start(ap, format);
 
-	while (format[i] != NULL)
+	while (format[i])
 	{
 		if (format[i] == '%')
 		{
-			c += spec_checker(ap, format[i + 1]);
+			c = c + spec_checker(ap, format[i + 1]);
 			i += 1;
 		}
 		else

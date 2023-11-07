@@ -13,8 +13,8 @@ int spec_checker(va_list ap, const char s)
 {
 	int i = 0;
 	spec_t specs[] = {
-		{'c', print_char},
-		{'s', print_str}
+		{"c", print_char},
+		{"s", print_str}
 	};
 
 	while (i < 2)
@@ -56,7 +56,7 @@ int print_str(va_list ap)
 	int c = 0;
 	char *str = va_arg(ap, char *);
 
-	while (str[c] != NULL)
+	while (str[c])
 	{
 		putchar(str[c]);
 		c += 1;

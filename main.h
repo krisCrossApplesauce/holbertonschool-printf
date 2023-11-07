@@ -3,6 +3,9 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
+#include <stdarg.h>
+#include <math.h>
 
 /**
  * struct spec - struct for funcs to deal with different vars

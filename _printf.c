@@ -18,7 +18,7 @@ int _printf(const char *format, ...)
 
     while (format[i] != NULL) {
         if (format[i] == '%') {
-            spec_checker(ap, format[i + 1]);
+            c += spec_checker(ap, format[i + 1]);
             i += 1;
         }
         else {

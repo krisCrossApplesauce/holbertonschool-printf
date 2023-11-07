@@ -24,8 +24,8 @@ int spec_checker(va_list ap, char s)
 		i++;
 	}
 
-	putchar('%');
-	if (s == '%')
+	putchar("%");
+	if (s == "%")
 		return (1);
 	putchar(s);
 	return (2);
@@ -64,7 +64,7 @@ int print_str(va_list ap)
 	while (str[c])
 	{
 		putchar(str[c]);
-		c += 1;
+		c++;
 	}
 
 	return (c);

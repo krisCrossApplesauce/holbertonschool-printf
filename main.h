@@ -19,4 +19,7 @@ typedef struct spec {
 int _printf(const char *format, ...);
 int perc_checker(va_list ap, const char c);
 
+int print_char(va_list ap);
+int print_str(va_list ap);
+
 #endif

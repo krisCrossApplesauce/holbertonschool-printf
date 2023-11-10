@@ -9,7 +9,7 @@
  *
  * Return: int (length of var str/char or whatever)
  */
-int spec_checker(va_list ap, char s)
+int spec_checker(va_list args, char s)
 {
 	int i = 0;
 	spec_t specs[] = {
@@ -19,10 +19,10 @@ int spec_checker(va_list ap, char s)
 		{ "i", print_int }
 	};
 
-	while (i < 2)
+	while (i < 4)
 	{
 		if (*specs[i].spec == s)
-			return (specs[i].f(ap));
+			return (specs[i].f(args));
 		i++;
 	}
 
@@ -42,9 +42,9 @@ int spec_checker(va_list ap, char s)
  *
  * Return: int (number of chars printed, 1)
  */
-int print_char(va_list ap)
+int print_char(va_list args)
 {
-	putchar(va_arg(ap, int));
+	putchar(va_arg(args, int));
 	return (1);
 }
 
@@ -55,15 +55,13 @@ int print_char(va_list ap)
  *
  * Return: int (c -- stands for chars or count -- number of chars printed)
  */
-int print_str(va_list ap)
+int print_str(va_list args)
 {
 	int c = 0;
-	char *str;
-
-	str = va_arg(ap, char *);
+	char *str = va_arg(args, char *);
 
 	if (str == NULL)
-		return (0);
+		str = "(null)";
 
 	while (str[c])
 	{
@@ -81,11 +79,11 @@ int print_str(va_list ap)
  *
  * Return: int (c -- stands for chars or count -- number of chars printed)
  */
-int print_int(va_list ap)
+int print_int(va_list args)
 {
 	int i, ii, a = 0, n, not_n, x, c = 0;
 
-	n = va_arg(ap, int);
+	n = va_arg(args, int);
 
 	if (n < 0)
 	{

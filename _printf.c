@@ -6,24 +6,24 @@
  * @format: char pointer (str)
  *
  * Return: int (c, stands for chars or count, num of chars printed to stdout)
- */
+*/
 
 int _printf(const char *format, ...)
 {
-	va_list ap;
+	va_list args;
 	int i = 0;
 	int c = 0;
 
-	va_start(ap, format);
-
 	if (format == NULL)
-		return (0);
+		return (-1);
+
+	va_start(args, format);
 
 	while (format[i])
 	{
 		if (format[i] == '%')
 		{
-			c = c + spec_checker(ap, format[i + 1]);
+			c = c + spec_checker(args, format[i + 1]);
 			i++;
 		}
 		else
@@ -34,7 +34,7 @@ int _printf(const char *format, ...)
 		i++;
 	}
 
-	va_end(ap);
+	va_end(args);
 
-	return (i);
+	return (c);
 }

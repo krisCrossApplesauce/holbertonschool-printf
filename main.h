@@ -21,10 +21,10 @@ typedef struct spec
 } spec_t;
 
 int _printf(const char *format, ...);
-int spec_checker(va_list ap, const char c);
+int spec_checker(va_list args, const char c);
 
-int print_char(va_list ap);
-int print_str(va_list ap);
-int print_int(va_list ap);
+int print_char(va_list args);
+int print_str(va_list args);
+int print_int(va_list args);
 
 #endif

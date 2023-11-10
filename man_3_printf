@@ -1,6 +1,6 @@
 ./ This is the manpage of the _printf function
 .TH man _printf 3 "0.01"
-.DD 11/6/2023
+.DD 11/10/2023
 
 .SH NAME
 .B _printf

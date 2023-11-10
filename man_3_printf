@@ -1,0 +1,50 @@
+./ This is the manpage of the _printf function
+.TH man _printf 3 "0.01"
+.DD 11/6/2023
+
+.SH NAME
+.B _printf
+- A simple re-creation of the printf function
+.SH SYNOPSIS
+_printf FORMAT [ARGUMENT]…
+_print(const char *format, [argument]…)
+To use this function the #include "main.h" header is needed.
+
+.SH DESCRIPTION
+Prints the string, FORMAT, with the ARGUMENT(s) – if any – according to the
+specifiers in FORMAT. FORMAT works like any other string, with the exception
+of specifiers and the output is written to stdout.
+The specifiers are:
+.RS 3
+%c: a character
+.RS 0
+%s: string
+.RS 0
+%d: an integer of max and min size of an int type
+.RS 0
+%i: an integer of max and min size of an int type
+.RS 0
+%%: a single ‘%’
+.RS 0
+
+.SH CODING EXAMPLE
+.PP
+include "main.h"
+int main(void)
+{
+int i = 1;
+_printf("The value of i is %d.\n", i);
+return (0);
+}
+B. Writes this output to stdout:
+I. The value of i is 1.
+
+.SH RETURN VALUES
+The _printf() function returns an integer representing the number of symbols
+printed, not counting the null byte (\\0) that ends the string.
+
+.SH BUGS
+Bugs are present in some outputs, but the cause is currently unknown.
+
+.SH AUTHOR
+Karis Richardson
